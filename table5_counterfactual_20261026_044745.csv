@@ -1,0 +1,11 @@
+scenario,layer,upgrade,mean_savings_pct,resstock_matched_pct,resstock_naive_pct,note
+Reference HVAC 2025,student,3,0.1,2.17,1.94,"per-building matched on bldg_id (n=549,970); reported = paired per-household mean, naive = population means"
+Cold Climate ASHP,student,4,3.52,21.15,30.0,"per-building matched on bldg_id (n=549,970); reported = paired per-household mean, naive = population means"
+Air Sealing,student,10,1.46,7.71,-8.69,"per-building matched on bldg_id (n=306,290); reported = paired per-household mean, naive = population means"
+Attic Insulation,student,11,2.21,12.21,17.36,"per-building matched on bldg_id (n=507,163); reported = paired per-household mean, naive = population means"
+ENERGY STAR Windows,student,15,0.89,17.52,22.59,"per-building matched on bldg_id (n=538,284); reported = paired per-household mean, naive = population means"
+Reference HVAC 2025,teacher,3,2.18,2.17,1.94,"per-building matched on bldg_id (n=549,970); reported = paired per-household mean, naive = population means"
+Cold Climate ASHP,teacher,4,14.63,21.15,30.0,"per-building matched on bldg_id (n=549,970); reported = paired per-household mean, naive = population means"
+Air Sealing,teacher,10,7.34,7.71,-8.69,"per-building matched on bldg_id (n=306,290); reported = paired per-household mean, naive = population means"
+Attic Insulation,teacher,11,3.53,12.21,17.36,"per-building matched on bldg_id (n=507,163); reported = paired per-household mean, naive = population means"
+ENERGY STAR Windows,teacher,15,9.57,17.52,22.59,"per-building matched on bldg_id (n=538,284); reported = paired per-household mean, naive = population means"

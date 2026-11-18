@@ -1,0 +1,9 @@
+target_model,r2,rmse_kbtu,note,rmse_kbtu_per_sqft
+Total energy - primary multi-task,0.6473,33057.0,,
+Total energy - stacking ensemble,0.6542,32731.0,,
+EUI (derived),0.6572,,,17.55
+"EUI (direct, ablation)",0.6641,,,
+Heating EUI,0.6912,,,11.03
+Cooling EUI,0.6018,,,2.71
+Dhw EUI,0.6118,,,5.31
+Lighting EUI,0.4016,,,1.31

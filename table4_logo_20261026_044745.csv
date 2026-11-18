@@ -1,0 +1,4 @@
+held_out_regime,n_test,n_train,n_features_selected,r2_log_total
+Cold,7742,10754,250,0.7103
+Hot,4122,14374,250,0.6496
+Mixed,6632,11864,250,0.732

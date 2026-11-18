@@ -1,0 +1,11 @@
+model,r2_mean,r2_ci95,note
+XGBoost simple (no TL),0.6386,"[0.6386, 0.6386]",same features minus TL_*
+LightGBM simple (no TL),0.6373,"[0.6373, 0.6373]",same features minus TL_*
+XGBoost simple (+TL),0.6388,"[0.6388, 0.6388]",full features
+LightGBM simple (+TL),0.6411,"[0.6411, 0.6411]",full features
+Primary multi-task (no TL),0.6421,,"paired ablation, identical protocol"
+Primary multi-task (with TL),0.6453,,full architecture
+Honest stacking ensemble,0.6539,"[0.6539, 0.6539]",seed-mean shown in CI column source
+comparison: XGBoost with TL - without TL,0.0002,"[+0.02, +0.02] pp",verdict=no_measurable_gain (sign 1/1)
+comparison: LightGBM with TL - without TL,0.00371,"[+0.37, +0.37] pp",verdict=consistent_gain (sign 1/1)
+comparison: Honest stacking - best single baseline,0.01288,"[+1.29, +1.29] pp",verdict=consistent_gain (sign 1/1)
