@@ -1,0 +1,8 @@
+metric,r2,target,status
+total_btu (primary),0.6452942211733409,0.85,below internal benchmark
+eui (derived),0.6560380905481811,0.7,below internal benchmark
+eui_heating,0.6928239537090712,0.7,below internal benchmark
+eui_cooling,0.5952579856188038,0.7,below internal benchmark
+eui_dhw,0.6065156450553131,0.7,below internal benchmark
+eui_lighting,0.39319856243552687,0.7,below internal benchmark
+total_btu (stacked ensemble),0.653938010646838,0.85,below internal benchmark

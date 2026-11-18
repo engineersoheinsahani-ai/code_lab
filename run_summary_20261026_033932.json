@@ -1,0 +1,51 @@
+{
+  "version": "8.1",
+  "run_stamp": "20261026_033932",
+  "n_train": 12947,
+  "n_val": 1850,
+  "n_calib": 925,
+  "n_test": 2774,
+  "n_features_selected": 250,
+  "n_features_final": 252,
+  "tl_used": true,
+  "tl_ablation_r2": 0.6421336304760241,
+  "primary_test_r2_total": 0.6452942211733409,
+  "primary_test_r2_eui": 0.6560380905481811,
+  "ensemble_test_r2_total": 0.653938010646838,
+  "conformal_mode": "calib-split",
+  "conformal_coverage_90": 0.9012256669069935,
+  "population_calibration_error_pct": -5.76838677175109,
+  "logo_mean_r2": 0.6972982827104118,
+  "leakage_audit_passed": true,
+  "leakage_audit_json": "/home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/outputs/tables/leakage_audit_20261026_040713.json",
+  "seed_comparisons": {
+    "tl_effect_xgb": "no_measurable_gain",
+    "tl_effect_lgb": "consistent_gain",
+    "stacking_effect": "consistent_gain"
+  },
+  "routing": {
+    "heating": "share",
+    "cooling": "direct",
+    "dhw": "direct",
+    "lighting": "share"
+  },
+  "task_val_scores": {
+    "heating": {
+      "share_r2": 0.7052008013126934,
+      "direct_r2": 0.7022113407154262
+    },
+    "cooling": {
+      "share_r2": 0.6367845734865094,
+      "direct_r2": 0.6393866642162015
+    },
+    "dhw": {
+      "share_r2": 0.6654779118802938,
+      "direct_r2": 0.6660269192910826
+    },
+    "lighting": {
+      "share_r2": 0.39281752870187714,
+      "direct_r2": 0.35714746108280293
+    }
+  },
+  "runtime_seconds": 2173.7
+}

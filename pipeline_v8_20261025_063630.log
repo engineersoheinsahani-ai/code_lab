@@ -1,0 +1,10 @@
+2026-10-25 06:36:30,354 | INFO     | MainPipeline | ======================================================================
+2026-10-25 06:36:30,354 | INFO     | MainPipeline |   PHYSICS-INFORMED ENERGY-CONSERVING PIPELINE v8.1
+2026-10-25 06:36:30,354 | INFO     | MainPipeline |   Target: Energy and Buildings (Q1, IF=8.0)
+2026-10-25 06:36:30,354 | INFO     | MainPipeline | ======================================================================
+2026-10-25 06:36:30,354 | INFO     | MainPipeline |   RECS nrows: ALL | Max features: 250
+2026-10-25 06:36:30,355 | INFO     | MainPipeline |   ResStock upgrades: [0, 3, 4, 10, 11, 15] | Transfer: True
+2026-10-25 06:36:30,355 | INFO     | MainPipeline |   Weights: True | Optimize: False | Fast: False
+2026-10-25 06:36:30,355 | INFO     | MainPipeline |   Seeds: 1 (ensemble: 3) | N_JOBS: 4
+2026-10-25 06:36:30,355 | INFO     | MainPipeline | ======================================================================
+2026-10-25 06:36:30,355 | INFO     | MainPipeline | STEP 0: Leave-one-climate-out workers (fresh process per zone; results land in Table 4)...

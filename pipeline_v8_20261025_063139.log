@@ -1,0 +1,54 @@
+2026-10-25 06:31:39,564 | INFO     | MainPipeline | ======================================================================
+2026-10-25 06:31:39,564 | INFO     | MainPipeline |   PHYSICS-INFORMED ENERGY-CONSERVING PIPELINE v8.1
+2026-10-25 06:31:39,564 | INFO     | MainPipeline |   Target: Energy and Buildings (Q1, IF=8.0)
+2026-10-25 06:31:39,564 | INFO     | MainPipeline | ======================================================================
+2026-10-25 06:31:39,564 | INFO     | MainPipeline |   RECS nrows: ALL | Max features: 250
+2026-10-25 06:31:39,564 | INFO     | MainPipeline |   ResStock upgrades: [0, 3, 4, 10, 11, 15] | Transfer: True
+2026-10-25 06:31:39,564 | INFO     | MainPipeline |   Weights: True | Optimize: False | Fast: False
+2026-10-25 06:31:39,564 | INFO     | MainPipeline |   Seeds: 1 (ensemble: 3) | N_JOBS: 4
+2026-10-25 06:31:39,565 | INFO     | MainPipeline | ======================================================================
+2026-10-25 06:31:39,565 | INFO     | MainPipeline | STEP 0: Leave-one-climate-out workers (fresh process per zone; results land in Table 4)...
+2026-10-25 06:33:04,891 | INFO     | MainPipeline |   LOGO worker OK for zone Cold
+2026-10-25 06:34:30,155 | INFO     | MainPipeline |   LOGO worker OK for zone Hot
+2026-10-25 06:36:02,570 | INFO     | MainPipeline |   LOGO worker OK for zone Mixed
+2026-10-25 06:36:02,860 | INFO     | MainPipeline |   LOGO done: mean R2 0.6973 | sum n_test = 18,496 (full dataset)
+2026-10-25 06:36:02,860 | INFO     | MainPipeline | STEP 1: Loading data...
+2026-10-25 06:36:02,865 | INFO     | data_loader | Loading RECS 2020 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/recs2020_public_v7.csv
+2026-10-25 06:36:03,667 | INFO     | data_loader | RECS loaded: 18,496 rows x 799 columns
+2026-10-25 06:36:03,737 | INFO     | data_loader | Mapped YEAR_BUILT for 18,496 records
+2026-10-25 06:36:04,360 | INFO     | data_loader | Replaced 3,036,742 missing-code values with NaN
+2026-10-25 06:36:04,404 | INFO     | data_loader | EUI calculated for 18,496 records
+2026-10-25 06:36:04,408 | INFO     | data_loader |   EUI_HEATING: from TOTALBTUSPH, n=18,496 (mean=20.15)
+2026-10-25 06:36:04,408 | INFO     | data_loader |   SHARE_HEATING: mean=0.385
+2026-10-25 06:36:04,410 | INFO     | data_loader |   EUI_COOLING: from BTUELCOL, n=18,496 (mean=3.91)
+2026-10-25 06:36:04,410 | INFO     | data_loader |   SHARE_COOLING: mean=0.095
+2026-10-25 06:36:04,412 | INFO     | data_loader |   EUI_DHW: from TOTALBTUWTH, n=18,496 (mean=9.42)
+2026-10-25 06:36:04,412 | INFO     | data_loader |   SHARE_DHW: mean=0.200
+2026-10-25 06:36:04,415 | INFO     | data_loader |   EUI_LIGHTING: from BTUELLGT, n=18,496 (mean=1.41)
+2026-10-25 06:36:04,416 | INFO     | data_loader |   SHARE_LIGHTING: mean=0.033
+2026-10-25 06:36:04,432 | INFO     | data_loader | Added RECS climate features: HDD mean=4271.8, CDD mean=1525.5
+2026-10-25 06:36:04,437 | INFO     | data_loader | ==================================================
+2026-10-25 06:36:04,437 | INFO     | data_loader | EUI VALIDATION REPORT
+2026-10-25 06:36:04,467 | INFO     | data_loader |   Count: 18,496 | Mean: 47.59 | Median: 41.35
+2026-10-25 06:36:04,489 | INFO     | data_loader |   1st %ile: 8.88 | 99th %ile: 147.81
+2026-10-25 06:36:04,491 | INFO     | data_loader |   [PASS] Median EUI (41.35) within expected range (~42)
+2026-10-25 06:36:04,491 | INFO     | data_loader | ==================================================
+2026-10-25 06:36:04,492 | INFO     | data_loader | RECS loading complete.
+2026-10-25 06:36:04,502 | INFO     | data_loader | TMY3 metadata loaded: 1,020 stations
+2026-10-25 06:36:04,503 | INFO     | data_loader | Loading hourly TMY3 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/tmy3.csv (this may take a while)...
+2026-10-25 06:36:18,441 | INFO     | data_loader | TMY3 hourly loaded: 8,935,200 rows
+2026-10-25 06:36:19,751 | INFO     | data_loader | TMY3 aggregated: 1,020 stations, 19 climate features
+2026-10-25 06:36:19,967 | INFO     | data_loader | TMY3 meta+hourly: 1,020/1,020 stations have hourly aggregates
+2026-10-25 06:36:20,628 | INFO     | data_loader | TMY3 merged by state. Added 22 features; matched records: 98.8%
+2026-10-25 06:36:20,660 | INFO     | data_loader |   [VALIDATION] corr(TMY3_HDD65, RECS HDD65) = 0.944 (expect > 0.5)
+2026-10-25 06:36:20,662 | INFO     | MainPipeline | STEP 1b: Loading ResStock...
+2026-10-25 06:36:20,664 | INFO     | data_loader | Loading ResStock upgrade 0 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade0.csv.gz
+2026-10-25 06:36:20,686 | INFO     | data_loader |   upgrade0.csv.gz: gzip'd TAR container -> streaming member 'upgrade0.csv' (3,346,425,545 B)
+2026-10-25 06:37:56,457 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 06:37:56,486 | INFO     | data_loader |   Loaded: 549,971 rows x 41 columns
+2026-10-25 06:37:56,500 | INFO     | data_loader | Loading ResStock upgrade 3 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade3.csv.gz
+2026-10-25 06:37:56,572 | INFO     | data_loader |   upgrade3.csv.gz: gzip'd TAR container -> streaming member 'upgrade3.csv' (3,843,989,480 B)
+2026-10-25 06:39:21,177 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 06:39:21,177 | INFO     | data_loader |   Loaded: 549,971 rows x 41 columns
+2026-10-25 06:39:21,179 | INFO     | data_loader | Loading ResStock upgrade 4 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade4.csv.gz
+2026-10-25 06:39:21,209 | INFO     | data_loader |   upgrade4.csv.gz: gzip'd TAR container -> streaming member 'upgrade4.csv' (4,152,156,696 B)

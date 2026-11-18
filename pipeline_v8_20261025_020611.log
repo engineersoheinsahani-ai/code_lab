@@ -1,0 +1,112 @@
+2026-10-25 02:06:11,800 | INFO     | MainPipeline | ======================================================================
+2026-10-25 02:06:11,801 | INFO     | MainPipeline |   PHYSICS-INFORMED ENERGY-CONSERVING PIPELINE v8.1
+2026-10-25 02:06:11,802 | INFO     | MainPipeline |   Target: Energy and Buildings (Q1, IF=8.0)
+2026-10-25 02:06:11,802 | INFO     | MainPipeline | ======================================================================
+2026-10-25 02:06:11,802 | INFO     | MainPipeline |   RECS nrows: ALL | Max features: 250
+2026-10-25 02:06:11,802 | INFO     | MainPipeline |   ResStock upgrades: [0, 3, 4, 10, 11, 15] | Transfer: True
+2026-10-25 02:06:11,802 | INFO     | MainPipeline |   Weights: True | Optimize: True | Fast: False
+2026-10-25 02:06:11,802 | INFO     | MainPipeline |   Seeds: 10 (ensemble: 3) | N_JOBS: 4
+2026-10-25 02:06:11,802 | INFO     | MainPipeline | ======================================================================
+2026-10-25 02:06:11,802 | INFO     | MainPipeline | STEP 0: Leave-one-climate-out workers (fresh process per zone; results land in Table 4)...
+2026-10-25 02:07:34,330 | INFO     | MainPipeline |   LOGO worker OK for zone Cold
+2026-10-25 02:09:04,412 | INFO     | MainPipeline |   LOGO worker OK for zone Hot
+2026-10-25 02:10:30,841 | INFO     | MainPipeline |   LOGO worker OK for zone Mixed
+2026-10-25 02:10:31,103 | INFO     | MainPipeline |   LOGO done: mean R2 0.6973 | sum n_test = 18,496 (full dataset)
+2026-10-25 02:10:31,104 | INFO     | MainPipeline | STEP 1: Loading data...
+2026-10-25 02:10:31,107 | INFO     | data_loader | Loading RECS 2020 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/recs2020_public_v7.csv
+2026-10-25 02:10:31,892 | INFO     | data_loader | RECS loaded: 18,496 rows x 799 columns
+2026-10-25 02:10:31,986 | INFO     | data_loader | Mapped YEAR_BUILT for 18,496 records
+2026-10-25 02:10:32,591 | INFO     | data_loader | Replaced 3,036,742 missing-code values with NaN
+2026-10-25 02:10:32,641 | INFO     | data_loader | EUI calculated for 18,496 records
+2026-10-25 02:10:32,645 | INFO     | data_loader |   EUI_HEATING: from TOTALBTUSPH, n=18,496 (mean=20.15)
+2026-10-25 02:10:32,645 | INFO     | data_loader |   SHARE_HEATING: mean=0.385
+2026-10-25 02:10:32,648 | INFO     | data_loader |   EUI_COOLING: from BTUELCOL, n=18,496 (mean=3.91)
+2026-10-25 02:10:32,648 | INFO     | data_loader |   SHARE_COOLING: mean=0.095
+2026-10-25 02:10:32,650 | INFO     | data_loader |   EUI_DHW: from TOTALBTUWTH, n=18,496 (mean=9.42)
+2026-10-25 02:10:32,650 | INFO     | data_loader |   SHARE_DHW: mean=0.200
+2026-10-25 02:10:32,652 | INFO     | data_loader |   EUI_LIGHTING: from BTUELLGT, n=18,496 (mean=1.41)
+2026-10-25 02:10:32,652 | INFO     | data_loader |   SHARE_LIGHTING: mean=0.033
+2026-10-25 02:10:32,668 | INFO     | data_loader | Added RECS climate features: HDD mean=4271.8, CDD mean=1525.5
+2026-10-25 02:10:32,670 | INFO     | data_loader | ==================================================
+2026-10-25 02:10:32,670 | INFO     | data_loader | EUI VALIDATION REPORT
+2026-10-25 02:10:32,698 | INFO     | data_loader |   Count: 18,496 | Mean: 47.59 | Median: 41.35
+2026-10-25 02:10:32,723 | INFO     | data_loader |   1st %ile: 8.88 | 99th %ile: 147.81
+2026-10-25 02:10:32,725 | INFO     | data_loader |   [PASS] Median EUI (41.35) within expected range (~42)
+2026-10-25 02:10:32,725 | INFO     | data_loader | ==================================================
+2026-10-25 02:10:32,725 | INFO     | data_loader | RECS loading complete.
+2026-10-25 02:10:32,741 | INFO     | data_loader | TMY3 metadata loaded: 1,020 stations
+2026-10-25 02:10:32,742 | INFO     | data_loader | Loading hourly TMY3 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/tmy3.csv (this may take a while)...
+2026-10-25 02:10:50,918 | INFO     | data_loader | TMY3 hourly loaded: 8,935,200 rows
+2026-10-25 02:10:52,253 | INFO     | data_loader | TMY3 aggregated: 1,020 stations, 19 climate features
+2026-10-25 02:10:55,338 | INFO     | data_loader | TMY3 meta+hourly: 1,020/1,020 stations have hourly aggregates
+2026-10-25 02:10:56,009 | INFO     | data_loader | TMY3 merged by state. Added 22 features; matched records: 98.8%
+2026-10-25 02:10:56,051 | INFO     | data_loader |   [VALIDATION] corr(TMY3_HDD65, RECS HDD65) = 0.944 (expect > 0.5)
+2026-10-25 02:10:56,068 | INFO     | MainPipeline | STEP 1b: Loading ResStock...
+2026-10-25 02:10:56,073 | INFO     | data_loader | Loading ResStock upgrade 0 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade0.csv.gz
+2026-10-25 02:10:56,106 | INFO     | data_loader |   upgrade0.csv.gz: gzip'd TAR container -> streaming member 'upgrade0.csv' (3,346,425,545 B)
+2026-10-25 02:11:55,053 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 02:11:55,053 | INFO     | data_loader |   Loaded: 549,971 rows x 41 columns
+2026-10-25 02:11:55,054 | INFO     | data_loader | Loading ResStock upgrade 3 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade3.csv.gz
+2026-10-25 02:11:55,108 | INFO     | data_loader |   upgrade3.csv.gz: gzip'd TAR container -> streaming member 'upgrade3.csv' (3,843,989,480 B)
+2026-10-25 02:13:05,271 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 02:13:05,271 | INFO     | data_loader |   Loaded: 549,971 rows x 41 columns
+2026-10-25 02:13:05,273 | INFO     | data_loader | Loading ResStock upgrade 4 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade4.csv.gz
+2026-10-25 02:13:05,329 | INFO     | data_loader |   upgrade4.csv.gz: gzip'd TAR container -> streaming member 'upgrade4.csv' (4,152,156,696 B)
+2026-10-25 02:14:12,803 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 02:14:12,803 | INFO     | data_loader |   Loaded: 549,971 rows x 41 columns
+2026-10-25 02:14:12,804 | INFO     | data_loader | Loading ResStock upgrade 10 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade10.csv.gz
+2026-10-25 02:14:12,831 | INFO     | data_loader |   upgrade10.csv.gz: gzip'd TAR container -> streaming member 'upgrade10.csv' (2,356,201,826 B)
+2026-10-25 02:14:55,601 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 02:14:55,602 | INFO     | data_loader |   Loaded: 306,290 rows x 41 columns
+2026-10-25 02:14:55,603 | INFO     | data_loader | Loading ResStock upgrade 11 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade11.csv.gz
+2026-10-25 02:14:55,631 | INFO     | data_loader |   upgrade11.csv.gz: gzip'd TAR container -> streaming member 'upgrade11.csv' (3,911,842,103 B)
+2026-10-25 02:15:59,553 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 02:15:59,554 | INFO     | data_loader |   Loaded: 507,164 rows x 41 columns
+2026-10-25 02:15:59,555 | INFO     | data_loader | Loading ResStock upgrade 15 from: /home/mohsen_mvil/journal-arena-enb-pro/work/code-lab/data/upgrade15.csv.gz
+2026-10-25 02:15:59,596 | INFO     | data_loader |   upgrade15.csv.gz: gzip'd TAR container -> streaming member 'upgrade15.csv' (4,162,489,657 B)
+2026-10-25 02:17:05,017 | INFO     | data_loader |   Retaining 41 mapped columns per chunk
+2026-10-25 02:17:05,017 | INFO     | data_loader |   Loaded: 538,285 rows x 41 columns
+2026-10-25 02:17:05,018 | INFO     | data_loader | ResStock loading complete: 6/6 files loaded
+2026-10-25 02:17:05,052 | INFO     | MainPipeline | STEP 2: Computing physics-informed features...
+2026-10-25 02:17:05,114 | INFO     | physics_features | Computing physics-informed features v8.0...
+2026-10-25 02:17:05,152 | INFO     | physics_features |   PH_eui_estimate vs EUI correlation: 0.2258
+2026-10-25 02:17:05,152 | INFO     | physics_features |   Physics features created: 47
+2026-10-25 02:17:05,153 | INFO     | physics_features |     PH_building_height: mean=14.2323, valid=18,496
+2026-10-25 02:17:05,153 | INFO     | physics_features |     PH_footprint_area: mean=1393.5534, valid=18,496
+2026-10-25 02:17:05,154 | INFO     | physics_features |     PH_building_perimeter: mean=142.0929, valid=18,496
+2026-10-25 02:17:05,154 | INFO     | physics_features |     PH_wall_area: mean=1904.5602, valid=18,496
+2026-10-25 02:17:05,155 | INFO     | physics_features |     PH_roof_area: mean=1393.5534, valid=18,496
+2026-10-25 02:17:05,155 | INFO     | physics_features |     PH_building_volume: mean=17639.7178, valid=18,496
+2026-10-25 02:17:05,156 | INFO     | physics_features |     PH_surface_area: mean=4691.6670, valid=18,496
+2026-10-25 02:17:05,156 | INFO     | physics_features |     PH_surface_volume_ratio: mean=0.2865, valid=18,496
+2026-10-25 02:17:05,156 | INFO     | physics_features |     PH_surface_factor: mean=2.5783, valid=18,496
+2026-10-25 02:17:05,157 | INFO     | physics_features |     PH_log_sqft: mean=7.4200, valid=18,496
+2026-10-25 02:17:07,007 | INFO     | eda | EDA done: EUI mean=47.6, n=18,496
+2026-10-25 02:17:07,007 | INFO     | MainPipeline | STEP 3: Four-way split (before any fitted preprocessing)...
+2026-10-25 02:17:07,185 | INFO     | preprocessing | Split (stratified by BA_climate_SIMPLE): train=12,947 | val=1,850 | calib=925 | test=2,774
+2026-10-25 02:17:07,186 | INFO     | preprocessing |   Roles: val=model selection (early stopping/routing/Optuna); calib=UNTOUCHED conformal calibration; test=reporting only.
+2026-10-25 02:17:07,192 | INFO     | MainPipeline | STEP 4: Feature engineering (fit on train only)...
+2026-10-25 02:17:07,195 | INFO     | feature_engineering | ============================================================
+2026-10-25 02:17:07,195 | INFO     | feature_engineering | FEATURE ENGINEERING v8.0 (fit on train only)
+2026-10-25 02:17:07,196 | INFO     | feature_engineering | ============================================================
+2026-10-25 02:17:07,359 | INFO     | feature_engineering | Categorical: 550, Numeric: 151
+2026-10-25 02:17:09,127 | INFO     | feature_engineering | Ordinal encoder fitted on 550 categorical columns (train only)
+2026-10-25 02:17:14,167 | INFO     | MainPipeline | Final feature matrix: 12,947 x 701
+2026-10-25 02:17:14,167 | INFO     | MainPipeline |   Survey weights enabled (NWEIGHT, normalized). Train sum=12,947
+2026-10-25 02:17:14,167 | INFO     | MainPipeline | STEP 5: Feature selection (train only)...
+2026-10-25 02:17:14,335 | INFO     | feature_selection | Dropped 3 all-NaN/constant columns before selection
+2026-10-25 02:18:07,170 | INFO     | feature_selection | Selected 250 features (physics: 43, from 698 available, train-only)
+2026-10-25 02:18:07,198 | INFO     | MainPipeline |   Feature matrix after selection: 250 features (+2 TL meta-features appended later = 252 final, when transfer learning is active)
+2026-10-25 02:18:07,198 | INFO     | MainPipeline | STEP 6: Transfer learning (ResStock teacher -> RECS meta-features)...
+2026-10-25 02:18:14,979 | INFO     | transfer_learning | Training ResStock teacher: n=494,974, features=33
+2026-10-25 02:18:43,118 | INFO     | transfer_learning |   Teacher holdout: R2(log)=0.7378, RMSE=31,970 kBtu
+2026-10-25 02:18:43,466 | INFO     | transfer_learning |   KD meta-features added: TL_pred_logbtu mean=10.993
+2026-10-25 02:18:43,551 | INFO     | transfer_learning |   KD meta-features added: TL_pred_logbtu mean=10.985
+2026-10-25 02:18:43,646 | INFO     | transfer_learning |   KD meta-features added: TL_pred_logbtu mean=10.967
+2026-10-25 02:18:43,742 | INFO     | transfer_learning |   KD meta-features added: TL_pred_logbtu mean=10.997
+2026-10-25 02:18:43,743 | INFO     | MainPipeline | STEP 7: Energy-conserving multi-task training...
+2026-10-25 02:18:43,744 | INFO     | model_training | ============================================================
+2026-10-25 02:18:43,744 | INFO     | model_training | ENERGY-CONSERVING MULTI-TASK TRAINING v8.1
+2026-10-25 02:18:43,744 | INFO     | model_training |   Primary: log1p(TOTALBTU) | Shares: ['heating', 'cooling', 'dhw', 'lighting'] | Features: 252 | Samples: 12,947
+2026-10-25 02:18:43,744 | INFO     | model_training | ============================================================
+2026-10-25 02:18:43,746 | INFO     | model_training |   Training primary total-energy model...
